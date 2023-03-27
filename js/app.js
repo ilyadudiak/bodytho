@@ -30,14 +30,15 @@ function pinAnimation(elementId) {
         scrub: true,
         pin: true,
     });
-
+    ScrollTrigger.refresh();
 }
 
 
 document.addEventListener("DOMContentLoaded", function () {
     pinAnimation('animation-blocks-1');
-    pinAnimation('animation-blocks-2');
     pinAnimation('animation-blocks-3');
+    pinAnimation('animation-blocks-2');
+
     ScrollTrigger.refresh();
 });
 

@@ -1513,10 +1513,23 @@ body {
     .animation-blocks_pc {
         display: none;
     }
+
+    .animation-blocks_mobile {
+        margin-top: 100px;
+    }
+
+    #animation-blocks-2 .animation-block__text span {
+        text-transform: none;
+    }
 }
 
 
 @media (max-width: 375px) {
+    #animation-blocks-2 .animation-block__text span {
+        text-transform: none;
+        font-size: 16px;
+    }
+
     .main img {
         width: 187px;
         height: 187px;
@@ -1530,11 +1543,12 @@ body {
         display: none;
     }
 
-    .animation-blocks-mobile1 {
-        display: flex;
+    .animation-blocks_mobile {
+        display: block;
         margin-top: 100px;
-        height: 900px;
     }
+
+
 
     .animation-block4 {
         background: url(../img/animation-mobile1.jpg);
@@ -1590,6 +1604,14 @@ body {
     display: none;
 }
 
+#closeMainBtn {
+    background: url(../img/closeNav.svg);
+    background-position: center;
+    background-size: 100%;
+    height: 47px;
+    width: 63px;
+}
+
 @media (max-width: 747px) {
     .nav-buttons {
         display: none;
@@ -1616,5 +1638,12 @@ body {
         min-height: 51px;
         display: flex;
         align-items: center;
+    }
+
+    #closeMainBtn {
+        background: url(../img/closeNav2.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
     }
 }
