@@ -16,10 +16,82 @@
 </head>
 
 <body>
+    <div class="main-popup">
+        <div class="main-popup__bg" id="closeMainPopup"></div>
+        <div class="main-popup__stage main-popup__stage1">
+            <h2 class="main-popup__title">Запись на процедуру</h2>
+            <form class="main-popup__stage-wrapper" action="" id="moveToStage2">
+                <button class="main-popup__stage2-close" id="closeMainPopup"></button>
+                <label for="procedure">Выбор процедуры</label>
+                <select name="procedure" required>
+                    <option value="">Название процедуры</option>
+                    <option value="">Название процедуры</option>
+                    <option value="">Название процедуры</option>
+                </select>
+                <label>Желаемая дата и время посещения</label>
+                <div class="main-popup__stage1-dates">
+                    <input type="text" placeholder="Дата" required>
+                    <input type="text" placeholder="Время" required>
+                </div>
+                <label for="name">Имя</label>
+                <input type="text" name="name" placeholder="Ваше имя" required>
+                <label for="tel">Телефон</label>
+                <input type="text" name="tel" placeholder="+38(___) __ __" required>
+                <button class="about-block-btn"  type="submit">Записаться</button>
+                <p>* Нажимая на кнопку “<b>Записаться”</b> я соглашаюсь с политикой обработки персональных данных</p>
+            </form>
+        </div>
+        <div class="main-popup__stage main-popup__stage2">
+            <div class="main-popup__top">
+                <button class="main-popup__stage2-back" id="moveToStage1"></button>
+                <button class="main-popup__stage2-close" id="closeMainPopup"></button>
+            </div>
+            <div class="main-popup__stage2-wrapper">
+                <h3>HydraFacial MD® </h3>
+                <h4>Базовый уход: увлажнение</h4>
+                <p>Обеспечивает эффективное безболезненное очищение кожи за счет синергичного действия механической эксфолиации, многофункциональных сывороток и вакуума.
+                </p>
+                <span>Показания:</span>
+                <ul>
+                    <li>Загрязненная кожа любого типа; тусклый цвет лица;
+                    </li>
+                    <li>поверхностные и глубокие морщины; сухая <br> обезвоженная кожа;
+
+                    </li>
+                    <li>поверхностная пигментация; профилактика <br> возрастных изменений.
+
+
+                    </li>
+                </ul>
+                <div class="main-popup__stage2-info">
+                    <div class="main-popup__stage2-info-left">
+                        <p> <img src="img/stage5-clock.svg" alt=""><b>30</b> минут
+                        </p>
+                        <p><img src="img/stage5-ways.svg" alt=""> <b>4–8</b> процедур</p>   
+                    </div>
+                    <div class="main-popup__stage2-info-right">
+                        <p>
+                            <b>2000 грн</b> <br>
+                            процедура
+                        </p>
+                    </div>
+                </div>
+                <button class="about-block-btn" id="moveToStage3">Записаться</button>
+            </div>
+        </div>
+        <div class="main-popup__stage main-popup__stage3">
+            <h2>Запись на процедуру</h2>
+            <h3>Face Collection, SCENS, Процедура 1 </h3>
+            <img src="img/golden-arrow.svg" alt="">
+            <p>Ваша заявка отправлена!</p>
+            <p>Мы свяжемся с вами ближайшее время.</p>
+            <button class="more-btn" id="closeMainPopup">Закрыть</button>
+        </div>
+    </div>
     <div class="nav-main nav">
         <div class="nav-wrapper">
             <div class="nav-top__wrapper">
-                <div class="nav-top"><img src="img/logo.svg" alt="" id="closeMainBtn2" style="cursor: pointer;">
+                <div class="nav-top"><button id="closeMainBtn2" class="nav-top__logo-btn"></button>
                     <button class="closeNav" id="closeMainBtn"></button>
                 </div>
                 <ul class="nav-items">
@@ -28,17 +100,23 @@
                     <li><a href="#" class="nav-items__link" id="openNav1">Beauty Spa</a></li>
                     <li><a href="#" class="nav-items__link">Абонементы</a></li>
                     <li><a href="#" class="nav-items__link">Контакты</a></li>
-                    <button class="main-nav-mobile-btn " id="nav_record_btn">Запись на процедуры</button>
-                    <button class="main-nav-mobile-btn " id="nav_selection_btn">Подбор процедуры</button>
+                    <button class="main-nav-mobile-btn " id="nav_record_btn openMainPopup">Запись на процедуры <img src="img/mobile-menu-logo_3.svg" alt=""></button>
+                    <button class="main-nav-mobile-btn " id="nav_selection_btn openMainPopup" >Подбор процедуры <img src="img/mobile-menu-logo_4.svg" alt=""></button>
                 </ul>
-                <button class="search-btn">
-                    <img src="img/search.svg" alt="">
-                </button>
+                <div class="search-btn__wrapper">
+                    <button class="search-btn">
+                        <img src="img/search.svg" alt="">
+                    </button>
+                    <input type="text" class="search-btn__input">
+                </div>
+                
+                
+            
             </div>
 
             <div class="nav-buttons">
-                <button class="more-btn">подобрать процедуру</button>
-                <button class="about-block-btn">Записаться на процедуру</button>
+                <button class="more-btn" id="openMainPopup">подобрать процедуру</button>
+                <button class="about-block-btn" id="openMainPopup">Записаться на процедуру</button>
             </div>
         </div>
     </div>
@@ -55,14 +133,17 @@
                     <a href="#" class="nav-items__link">Salon</a>
                     <a href="#" class="nav-items__link">Аппараты</a>
                 </ul>
-                <button class="search-btn">
-                    <img src="img/search.svg" alt="">
-                </button>
+                <div class="search-btn__wrapper">
+                    <button class="search-btn">
+                        <img src="img/search.svg" alt="">
+                    </button>
+                    <input type="text" class="search-btn__input">
+                </div>
             </div>
-
+            
             <div class="nav-buttons">
-                <button class="more-btn">подобрать процедуру</button>
-                <button class="about-block-btn">Записаться на процедуру</button>
+                <button class="more-btn" id="openMainPopup">подобрать процедуру</button>
+                <button class="about-block-btn" id="openMainPopup">Записаться на процедуру</button>
             </div>
         </div>
     </div>
@@ -77,14 +158,17 @@
                     <a href="#" class="nav-items__link" id="openNav3">Уходы Facil Care: Косметика</a>
                     <a href="#" class="nav-items__link">Пиллинг</a>
                 </ul>
-                <button class="search-btn">
-                    <img src="img/search.svg" alt="">
-                </button>
+                <div class="search-btn__wrapper">
+                    <button class="search-btn">
+                        <img src="img/search.svg" alt="">
+                    </button>
+                    <input type="text" class="search-btn__input">
+                </div>
             </div>
 
             <div class="nav-buttons">
-                <button class="more-btn">подобрать процедуру</button>
-                <button class="about-block-btn">Записаться на процедуру</button>
+                <button class="more-btn" id="openMainPopup">подобрать процедуру</button>
+                <button class="about-block-btn" id="openMainPopup">Записаться на процедуру</button>
             </div>
         </div>
     </div>
@@ -103,9 +187,12 @@
                     <a href="#" class="nav-items__link">BIOLOGIQUE RECHERCHE</a>
                     <a href="#" class="nav-items__link">iS CLINICAL</a>
                 </ul>
-                <button class="search-btn">
-                    <img src="img/search.svg" alt="">
-                </button>
+                <div class="search-btn__wrapper">
+                    <button class="search-btn">
+                        <img src="img/search.svg" alt="">
+                    </button>
+                    <input type="text" class="search-btn__input">
+                </div>
             </div>
 
             <div class="nav-buttons">
@@ -172,7 +259,7 @@
                     науки,
                     авторских
                     методик и передового оборудования. </p>
-                <button class="about-block-btn">Подобрать процедуру</button>
+                <button class="about-block-btn" id="openMainPopup">Подобрать процедуру</button>
             </div>
             <div class="about-block__right">
                 <a class="about-block__right-main-ring">
@@ -208,14 +295,8 @@
     </div>
     <div class="animation-blocks animation-blocks_mobile" id="animation-blocks-3">
         <div class="animation-block animation-block1">
-            <div class="animation-block__text">
-                <span>Drinks & food</span>
-            </div>
         </div>
         <div class="animation-block animation-block2">
-            <div class="animation-block__text">
-                <span>Facial Collection </span>
-            </div>
         </div>
     </div>
 
